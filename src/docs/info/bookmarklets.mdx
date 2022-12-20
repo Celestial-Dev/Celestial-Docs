@@ -1,0 +1,23 @@
+---
+name: Bookmarklets
+route: /bookmarklets
+---
+# Bookmarklets
+Bookmarklets are a bookmarks that contains JavaScript commands that add new features to the browser. When clicked, a bookmarklet
+performs one of a wide variety of operations, such as running a search query or extracting data from a table. For example, clicking on a bookmarklet after selecting
+text on a webpage could run an Internet search on the selected text and display a search engine results page.
+
+HOW TO ADD: Copy and paste the bookmarklet boxes into your bookmark bar (located under your URL box), and they will be added. You can right-click them and press "Edit"
+to change the bookmark name and URL.
+
+## AutoClicker
+The title is self explanatory.
+```
+javascript:(function() { var clickerIsMouseDown = false; var clickerCurrentMouseTarget = document.body; document.body.addEventListener('mouseup', () => { clickerIsMouseDown = false; }); document.body.addEventListener('mousedown', () => { clickerIsMouseDown = true; }); document.body.addEventListener('mousemove', (e) => { clickerCurrentMouseTarget = e.target }); setInterval(() => { if (clickerIsMouseDown) clickerCurrentMouseTarget.click(); }, 0); })();
+```
+
+## Calculator
+A simple calculator prompt that you run in any tab, due to it being a Bookmarklet, it will not appear in your search history.
+```
+javascript:eval('function calc(){_o=prompt(_t,_z);if(_o!=\'\'&&_o!=null&&_o.toUpperCase()==_o.toLowerCase())_z=eval(_o);}');_t='JAVASCRIPTER.NET Calculator - Input the expression to be calculated:';_z='';calc();while(_o!=''&&_o!=null&&_o.toUpperCase()==_o.toLowerCase())calc()
+```
